@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 import tailwindcssAnimate from "tailwindcss-animate";
+import type { PluginAPI } from "tailwindcss/types/config";
 
 export default {
 	darkMode: ["class"],
@@ -74,7 +75,7 @@ export default {
 		}
 	},
 	plugins: [tailwindcssAnimate,
-		function ({ addUtilities }) {
+		function ({ addUtilities }: PluginAPI) {
 			addUtilities({
 				".clip-custom": {
 					clipPath: "polygon(0 0, 100% 10%, 100% 100%, 0% 100%)",
